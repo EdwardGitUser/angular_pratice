@@ -1,0 +1,38 @@
+<h3 class="product-heading">Products:</h3>
+<div class="product-container">
+    <div *ngFor="let product of products" class="product-item">
+        <div class="product-box">
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-price">Price: {{ product.price }}$</div>
+            <div class="product-author">Author: {{ product.author }}</div>
+        </div>
+    </div>
+</div>
+
+
+<h3 class="api-heading">Курс відносно гривні(API):</h3>
+<ul class="api-list">
+    <li *ngFor="let item of siteData" class="api-item">
+        <span>{{item.txt}}</span>
+        <span class="rate">{{item.rate}}</span>
+    </li>
+</ul>
+
+
+<!-- Прив'язка даних :) -->
+<h3>"Практика прив’язки даних"</h3>
+<!-- Інтерполяція (одностороннє прив’язування: компонент до шаблону): -->
+<h3>{{ title }}</h3>
+
+<!-- Прив’язка властивості (одностороннє прив’язування: компонент до шаблону): -->
+<input [value]="name">
+<br /><br />
+
+
+<!-- Двостороннє прив’язування (двостороннє прив’язування: компонент до шаблону та шаблон до компонента): -->
+<input [(ngModel)]="data">
+<p>Your name is: {{ data }}</p>
+
+<!-- Прив’язка подій (одностороння прив’язка: шаблон до компонента): -->
+<button (click)="handleClick()">Click me</button>
+<br /><br />
